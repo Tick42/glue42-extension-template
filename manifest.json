@@ -1,16 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "Glue42 Extension Template",
+  "name": "Glue42 Gmail connector",
   "version": "1.0",
   "permissions": [],
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "content.js"
-      ]
+      "matches": ["*://mail.google.com/*"],
+      "js": ["content.js"]
     }
   ]
 }
