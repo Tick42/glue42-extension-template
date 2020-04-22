@@ -1,18 +1,8 @@
 let clients;
 let timeout;
 
-// sync contact every second
-let lastUrl = "";
-setInterval(() => {
-    const currentUrl = window.document.location.href;
-    if (lastUrl !== currentUrl) {
-        syncContact();
-        lastUrl = currentUrl;
-    }
-}, 1000);
-
 (async () => {
-    const { setStatusToConnected, setStatusToDisconnected } = drawGlue42();
+    const { setStatusToConnected, setStatusToDisconnected } = createGlue42Indicator();
 
     // init Glue42
     window.injectedGlue = await Glue();
@@ -24,6 +14,16 @@ setInterval(() => {
     // Get the ClientList clients from the REST DB
     const body = await fetch('http://localhost:22060/clients');
     clients = await body.json();
+
+    // sync contact every second
+    let lastUrl = "";
+    setInterval(() => {
+        const currentUrl = window.document.location.href;
+        if (lastUrl !== currentUrl) {
+            syncContact();
+            lastUrl = currentUrl;
+        }
+    }, 1000);
 })();
 
 
@@ -83,8 +83,7 @@ function syncContact() {
     }, 500);
 }
 
-
-function drawGlue42() {
+function createGlue42Indicator() {
     // Wrapper element for the connectionImageElement and toolTipElement
     const wrapperElement = document.createElement('div');
     wrapperElement.style.position = 'fixed';
