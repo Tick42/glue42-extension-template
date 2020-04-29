@@ -10,7 +10,6 @@ Glue42 Extension Template
 ### Steps to create your own extension
 
 1. Clone https://github.com/Tick42/glue42-extension-template
-1. ```cd glue42-extension-template```
 1. Inside of ```manifest.json``` edit the extension ```name``` and the content_script's ```matches``` URL string array
 1. Inside of ```content.js``` write the code you want to inject to the URLs listed inside of the ```matches``` array (you need to initialize Glue42 to use [Glue42 APIs](https://docs.glue42.com/g4e/reference/glue/latest/glue/index.html), see [Initializing Glue42](#initializing-glue42-api) section)
 1. [Add your application to Glue42 Desktop](https://docs.glue42.com/g4e/configuration/index.html#configuration-application_configuration) - inside the ```details``` for your application specify ```allowExtensions: true```
