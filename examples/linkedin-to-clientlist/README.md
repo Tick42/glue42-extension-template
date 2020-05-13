@@ -5,7 +5,7 @@ Glue42 Extension Template Examples - LinkedIn to ClientList
 
 ### Prerequisites
 
-[```Glue42 Desktop```](https://glue42.com), [```node``` & ```npm```](https://nodejs.org/en/).
+[```Glue42 Desktop 3.9.1 or later```](https://glue42.com)
 
 ### Steps to run the demo
 
